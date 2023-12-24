@@ -12,9 +12,12 @@ import java.math.BigDecimal;
 @Service
 @RequiredArgsConstructor
 public class FinanceService {
+
     private static final String ADD_INCOME = "/addincome";
+
     private final IncomeRepository incomeRepository;
     private final SpendRepository spendRepository;
+
 
     public String addFinanceOperation(String operationType, String price, Long chatId) {
         String message;

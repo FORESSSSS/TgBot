@@ -46,4 +46,6 @@ public class ScheduleService {
             log.error("Возникла проблема при получении данных от сервисов ЦБ РФ", e);
         }
     }
+
+
 }

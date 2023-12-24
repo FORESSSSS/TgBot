@@ -14,8 +14,10 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 public class CentralRussianBankService extends WebServiceTemplate {
+
     @Value("${cbr.api.url}")
     private String cbrApiUrl;
+
 
     public List<ValuteCursOnDate> getCurrenciesFromCbr() throws DatatypeConfigurationException {
         final GetCursOnDateXML getCursOnDateXML = new GetCursOnDateXML();
@@ -40,4 +42,5 @@ public class CentralRussianBankService extends WebServiceTemplate {
     public ValuteCursOnDate getCourseForCurrency(String code) throws DatatypeConfigurationException {
         return getCurrenciesFromCbr().stream().filter(currency -> code.equals(currency.getChCode())).findFirst().get();
     }
+
 }
