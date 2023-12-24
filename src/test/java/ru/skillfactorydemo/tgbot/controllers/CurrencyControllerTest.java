@@ -13,7 +13,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 class CurrencyControllerTest {
-
     @Autowired
     private MockMvc mockMvc;
 
@@ -30,5 +29,4 @@ class CurrencyControllerTest {
                 .andExpect(status().isOk())
                 .andDo(print());
     }
-
 }

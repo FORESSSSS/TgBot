@@ -25,7 +25,6 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 @RequiredArgsConstructor
 public class BotService extends TelegramLongPollingBot {
-
     private static final String CURRENT_RATES = "/currentrates";
     private static final String ADD_INCOME = "/addincome";
     private static final String ADD_SPEND = "/addspend";
@@ -58,7 +57,7 @@ public class BotService extends TelegramLongPollingBot {
             } else if (ADD_SPEND.equalsIgnoreCase(message.getText())) {
                 response.setText("Отправьте мне сумму расходов");
             } else {
-               response.setText(financeService.addFinanceOperation(getPreviousCommand(message.getChatId()), message.getText(), message.getChatId()));
+                response.setText(financeService.addFinanceOperation(getPreviousCommand(message.getChatId()), message.getText(), message.getChatId()));
             }
 
             putPreviousCommand(message.getChatId(), message.getText());
@@ -69,10 +68,9 @@ public class BotService extends TelegramLongPollingBot {
                 activeChatRepository.save(activeChat);
             }
         } catch (Exception e) {
-          log.error("Возникла неизвестная проблема, сообщите пожалуйста администратору", e);
+            log.error("Возникла неизвестная проблема, сообщите пожалуйста администратору", e);
         }
     }
-
 
     public void sendNotificationToAllActiveChats(String message, Set<Long> chatIds) {
         for (Long id : chatIds) {

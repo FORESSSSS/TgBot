@@ -14,14 +14,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DataJpaTest
 class SpendRepositoryTest {
-
     @Autowired
     private SpendRepository spendRepository;
 
     @Test
     public void testRepo() {
         //noinspection StatementWithEmptyBody
-        for (int i = 0; i < 10; i++, spendRepository.save(new Spend()));
+        for (int i = 0; i < 10; i++, spendRepository.save(new Spend())) ;
         final List<Spend> found = spendRepository.findAll();
         assertEquals(13, found.size());
     }

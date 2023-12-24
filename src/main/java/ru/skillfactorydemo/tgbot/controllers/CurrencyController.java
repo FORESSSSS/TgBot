@@ -1,7 +1,5 @@
 package ru.skillfactorydemo.tgbot.controllers;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

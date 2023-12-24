@@ -15,5 +15,4 @@ public class GetCursOnDateXML {
 
     @XmlElement(name = "On_date", required = true, namespace = "http://web.cbr.ru/")
     protected XMLGregorianCalendar onDate;
-
 }

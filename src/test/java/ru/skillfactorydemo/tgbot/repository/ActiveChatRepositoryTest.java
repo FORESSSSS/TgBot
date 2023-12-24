@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 class ActiveChatRepositoryTest {
-
     @Autowired
     private ActiveChatRepository activeChatRepository;
 
